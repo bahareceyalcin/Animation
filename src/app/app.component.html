@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="header">
+      <button id="credit" (click)="createTab($event)"  routerLink="/credit" value="Kredi" data-link="/credit">Kredi</button>
+      <button id="collection" (click)="createTab($event)"  routerLink="/collection" value="Tahsilat" data-link="/collection">Tahsilat</button>
+      <button id="protocol" (click)="createTab($event)" routerLink="/protocol" value="Protokol" data-link="/protocol">Protokol</button>
+  </div>
+  <div class="body"> 
+
+    <div class="tabs" id="tabs">
+      <app-button (click)="functioncall($event)" [label]="'/credit'" ></app-button>
+      <app-tabs  (openedTab)="onOpenedTab($event)">
+
+        </app-tabs>
+      <!-- <button>TAB1</button>
+      <button>TAB2</button> -->
+    </div>
+    <div id="contents">
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="footer">
+  <app-deneme></app-deneme>  
+  </div>
+</div>
